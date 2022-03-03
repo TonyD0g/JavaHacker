@@ -1,4 +1,4 @@
-package 第二节课;
+package The2Class;
 
 import java.util.Scanner;   //导入Scanner类
 
