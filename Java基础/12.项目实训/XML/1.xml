@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Players> 
+  <PlayerName>xiaobizaizhi</PlayerName>  
+  <PlayerNum>1</PlayerNum>  
+  <PlayerMoney>69</PlayerMoney>  
+  <FightSpirit> 
+    <Fight sn="1">1</Fight>  
+    <Fight sn="2">2</Fight>  
+    <Fight sn="3">0</Fight>  
+    <Fight sn="4">0</Fight> 
+  </FightSpirit>  
+  <SpiritNums> 
+    <Spirit sn="1"> 
+      <name>妙蛙种子</name>  
+      <english>Bulbasaur</english>  
+      <grade>1</grade>  
+      <exp>15</exp>  
+      <blood>300</blood>  
+      <orignBlood>300</orignBlood>  
+      <attackPower>17</attackPower> 
+    </Spirit>  
+    <Spirit sn="2"> 
+      <name>小火龙</name>  
+      <english>Charmander</english>  
+      <grade>1</grade>  
+      <exp>1</exp>  
+      <blood>23</blood>  
+      <orignBlood>25</orignBlood>  
+      <attackPower>26</attackPower> 
+    </Spirit> 
+  </SpiritNums> 
+</Players>

@@ -1,0 +1,12 @@
+数据库名：pokemondbs
+
+CREATE DATABASE pokemondbs;/*创建数据库PoKemonDBS*/
+
+create table user(
+UserAccount int primary key comment'账号',
+`Passwd` char(10)comment'密码',
+PlayerNum int comment'玩家编号',
+`PlayerName` char(16) comment '玩家昵称'
+);
+/*创建用户表*/
+

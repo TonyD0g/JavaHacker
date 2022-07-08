@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Players>
+<!--昵称-->
+<PlayerName>xiaobizaizhi</PlayerName>
+
+<!--玩家编号/用户ID-->
+<PlayerNum>1</PlayerNum>
+
+<!--玩家金钱-->
+<PlayerMoney>100</PlayerMoney>
+
+<!--选择要出战的精灵-->
+<FightSpirit>
+	<!--出战精灵的编号-->
+	<Fight sn="1">
+	11	
+	</Fight>
+
+	<Fight sn="2">
+	20	
+	</Fight>
+    <Fight sn="3">0</Fight>
+    <Fight sn="4">0</Fight>
+</FightSpirit>
+
+<SpiritNums>
+ 	<Spirit sn="1">
+		<!--名字-->
+        		<name>小火龙</name>
+		<english>Charmander</english>
+		<!--等级-->
+        		<grade>1</grade>
+		<!--经验值,满100，则等级加1-->
+      		<exp>1</exp>
+		<!--血量-->
+        		<blood>180</blood>
+		<!--起始血量-->
+		<orignBlood>180</orignBlood>
+		<!--攻击力-->
+		<attackPower>23</attackPower>
+    	</Spirit>
+    	<Spirit sn="2">
+        		<name>妙蛙种子</name>
+		<english>Bulbasaur</english>
+        		<grade>2</grade>
+		<!--经验值,满100，则等级加1-->
+      		<exp>1</exp>
+        		<blood>300</blood>
+		<orignBlood>180</orignBlood>
+		<attackPower>17</attackPower>
+    	</Spirit>
+</SpiritNums>
+
+</Players>
+
