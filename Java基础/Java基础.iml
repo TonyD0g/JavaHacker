@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/0.UDF" isTestSource="false" packagePrefix="UDF" />
+      <sourceFolder url="file://$MODULE_DIR$/1.最基础的部分" isTestSource="false" packagePrefix="第一节课" />
+      <sourceFolder url="file://$MODULE_DIR$/10.异常处理,接口" isTestSource="false" packagePrefix="The10Class" />
+      <sourceFolder url="file://$MODULE_DIR$/11.集合类" isTestSource="false" packagePrefix="The11Class" />
+      <sourceFolder url="file://$MODULE_DIR$/2.输入输出" isTestSource="false" packagePrefix="The2Class" />
+      <sourceFolder url="file://$MODULE_DIR$/3.数组" isTestSource="false" packagePrefix="The3Class" />
+      <sourceFolder url="file://$MODULE_DIR$/4.类" isTestSource="false" packagePrefix="The4Class" />
+      <sourceFolder url="file://$MODULE_DIR$/5.构造方法,类的组合等" isTestSource="false" packagePrefix="The5Class" />
+      <sourceFolder url="file://$MODULE_DIR$/6.类置取,静态方法,重构等" isTestSource="false" packagePrefix="The6Class" />
+      <sourceFolder url="file://$MODULE_DIR$/7.继承,泛化,多态" isTestSource="false" packagePrefix="The7Class" />
+      <sourceFolder url="file://$MODULE_DIR$/8.继承" isTestSource="false" packagePrefix="The8Class" />
+      <sourceFolder url="file://$MODULE_DIR$/9.接口,抽象" isTestSource="false" packagePrefix="The9Class" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

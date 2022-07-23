@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Java基础/12.项目实训/12.项目实训.iml" filepath="$PROJECT_DIR$/Java基础/12.项目实训/12.项目实训.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JSP学习/JSP学习.iml" filepath="$PROJECT_DIR$/JSP学习/JSP学习.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/JavaHacker.iml" filepath="$PROJECT_DIR$/.idea/JavaHacker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java基础/Java基础.iml" filepath="$PROJECT_DIR$/Java基础/Java基础.iml" />
+    </modules>
+  </component>
+</project>
