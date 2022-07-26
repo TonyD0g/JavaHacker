@@ -14,16 +14,19 @@ import java.util.Random;
 public class XORModule {
     private static final Logger logger = Logger.getLogger(XORModule.class);
 
+    // 数字异或
     public static void doXOR(MethodDeclaration method) {
         logger.info("do integer xor operate in method");
         doCallableXOR(method);
     }
 
+    // 数字异或
     public static void doXORForConstruct(ConstructorDeclaration cd) {
         logger.info("do integer xor operate in constructor");
         doCallableXOR(cd);
     }
-    // 数字异或
+
+    // 数字异或 主函数
     private static void doCallableXOR(CallableDeclaration<?> c) {
         Random random = new Random();
         random.setSeed(System.currentTimeMillis());

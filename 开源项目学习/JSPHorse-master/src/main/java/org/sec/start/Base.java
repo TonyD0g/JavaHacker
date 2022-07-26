@@ -43,7 +43,7 @@ public class Base {
         return unit.findAll(ClassOrInterfaceDeclaration.class);
     }
 
-    // 再混淆
+    // 再混淆,对 shell 的主部分进行混淆
     protected static void normalOperate(MethodDeclaration method, String newDecName) {
         // 打乱switch顺序
         String newValue = SwitchModule.shuffle(method);
@@ -66,7 +66,7 @@ public class Base {
         });
     }
 
-    // 对代码进行各种混淆操作
+    // 对 解密文件Dec.java 进行混淆
     protected static String decCodeOperate(MethodDeclaration decMethod) {
 
         // 加密字符串常量，设置凯撒加密的偏移
@@ -87,7 +87,7 @@ public class Base {
         return newName;
     }
 
-    // 基础shell
+    // 基础shell ，已分析
     protected static void base(Command command, String method) throws IOException {
 
         logger.info("read target method");
@@ -99,10 +99,10 @@ public class Base {
             return;
         }
 
-        // 开始进行混淆：加密字符串常量，凯撒解密函数，异或加密数字，随机命名
+        // 开始对 解密文件Dec.java 进行混淆：加密字符串常量，凯撒解密函数，异或加密数字，随机命名
         String newDecName = decCodeOperate(decMethod);
 
-        // 再混淆
+        // 再混淆，这次对 shell 的主部分进行混淆
         normalOperate(newMethod, newDecName);
 
 
@@ -111,15 +111,19 @@ public class Base {
         logger.info("finish");
     }
 
+    // 已分析
     protected static void asmBase(Command command, String methodName, boolean useShortName) throws IOException {
         logger.info("read asm method");
         MethodDeclaration newMethod = getMethod(methodName);
+
         logger.info("read decrypt method");
         MethodDeclaration decMethod = getMethod("Dec.java");
         if (newMethod == null || decMethod == null) {
             return;
         }
         logger.info("rename class name");
+
+        // 进到 globalArr数组中，对 数组中的第（3）个进行替换，即替换为 newName
         List<VariableDeclarator> vds = newMethod.findAll(VariableDeclarator.class);
         for (VariableDeclarator vd : vds) {
             if (vd.getNameAsString().equals("globalArr")) {
@@ -133,6 +137,7 @@ public class Base {
                 sles.get(3).setValue(newName);
             }
         }
+        // 各种混淆，不复述了详情点进函数里
         String newDecName = decCodeOperate(decMethod);
         normalOperate(newMethod, newDecName);
         WriteUtil.write(newMethod, decMethod, command.password, command.unicode, command.output);
@@ -142,13 +147,16 @@ public class Base {
     protected static void classLoaderBase(Command command, String methodName, boolean dot) throws IOException {
         logger.info("read target method");
         MethodDeclaration clMethod = getMethod(methodName);
+
         logger.info("read decrypt method");
         MethodDeclaration decMethod = getMethod("Dec.java");
         if (clMethod == null || decMethod == null) {
             return;
         }
         logger.info("rename class name");
+
         String newName = "org/sec/ByteCodeEvil" + RandomUtil.getRandomString(10);
+        // 用ASM造字节码，暂未研究过。我水平有限先放一放
         byte[] resultByte = ByteCodeEvilDump.dump(newName);
         if (resultByte == null || resultByte.length == 0) {
             return;

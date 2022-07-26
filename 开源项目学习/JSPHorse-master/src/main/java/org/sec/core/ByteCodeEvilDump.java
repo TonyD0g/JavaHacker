@@ -10,6 +10,7 @@ import org.objectweb.asm.Opcodes;
 public class ByteCodeEvilDump implements Opcodes {
     private static final Logger logger = Logger.getLogger(ByteCodeEvilDump.class);
 
+
     public static byte[] dump (String name) {
         logger.info("generate new bytecode");
         ClassWriter classWriter = new ClassWriter(ClassWriter.COMPUTE_FRAMES);

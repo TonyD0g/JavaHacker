@@ -25,11 +25,13 @@ public class EncodeUtil {
             str1.append(c);
         }
 
-        // 凯撒后base64下
+        // 我在原项目的基础上套了层base64,结果发现无法执行了，很奇怪（无报错，加密解密部分均做了处理）
+
+        // 凯撒后base64一下
         sun.misc.BASE64Encoder encoder = new sun.misc.BASE64Encoder();
         return encoder.encode(str1.toString().getBytes(StandardCharsets.UTF_8));
     }
-    // 需要嵌入JSP的解密算法
+    // 需要嵌入JSP的解密算法 (未使用过)
     public static String dec(String str, int offset) {
         try {
             // 先Base64解码

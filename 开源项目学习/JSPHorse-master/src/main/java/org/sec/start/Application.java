@@ -26,6 +26,7 @@ import java.util.List;
 public class Application {
     private static final Logger logger = Logger.getLogger(Application.class);
 
+    // 已分析
     public static void start(String[] args) {
         try {
             // 处理用户输入的参数，如 -h 等
@@ -97,81 +98,17 @@ public class Application {
         }
     }
 
-    public static void doClassLoaderAsm(Command command) throws IOException {
-        Base.asmBase(command, "CLAsm.java", true);
-    }
-
     public static void doClassLoader(Command command) throws IOException {
         Base.classLoaderBase(command, "CL.java", true);
-    }
-
-    public static void doProxyAsm(Command command) throws IOException {
-        Base.asmBase(command, "ProxyAsm.java", false);
-    }
-
-    // 已分析
-    public static void doBcel(Command command) throws IOException {
-        logger.info("read bcel method");
-        MethodDeclaration bcelMethod = Base.getMethod("Bcel.java");
-
-        logger.info("read decrypt method");
-        MethodDeclaration decMethod = Base.getMethod("Dec.java");
-
-        if (bcelMethod == null || decMethod == null) {
-            return;
-        }
-
-        byte[] resultByte = ByteCodeEvilDump.dump("test/ByteCodeEvil");
-        if (resultByte == null || resultByte.length == 0) {
-            return;
-        }
-
-        String byteCode = Utility.encode(resultByte, true);
-        byteCode = "$$BCEL$$" + byteCode;
-        logger.info("modify global array");
-
-        List<VariableDeclarator> vds = bcelMethod.findAll(VariableDeclarator.class);
-        for (VariableDeclarator vd : vds) {
-            if (vd.getNameAsString().equals("globalArr")) {
-                List<StringLiteralExpr> sles = vd.findAll(StringLiteralExpr.class);
-                //首部加上 $$BCEL$$ ，这样才能正确运行
-                sles.get(1).setValue(byteCode);
-            }
-        }
-        // 开始混淆
-        String newDecName = Base.decCodeOperate(decMethod);
-        Base.normalOperate(bcelMethod, newDecName);
-
-        WriteUtil.write(bcelMethod, decMethod, command.password, command.unicode, command.output);
-        logger.info("finish");
-    }
-
-    public static void doBcelAsm(Command command) throws IOException {
-        Base.asmBase(command, "BcelAsm.java", false);
-    }
-
-    // 已分析
-    public static void doJavac(Command command) throws IOException {
-        logger.info("read javac method");
-        MethodDeclaration javacMethod = Base.getMethod("Javac.java");
-
-        logger.info("read decrypt method");
-        MethodDeclaration decMethod = Base.getMethod("Dec.java");
-        if (javacMethod == null || decMethod == null) {
-            return;
-        }
-
-        String newDecName = Base.decCodeOperate(decMethod);
-        Base.normalOperate(javacMethod, newDecName);
-        WriteUtil.writeJavac(javacMethod, decMethod, command.password, command.unicode, command.output);
-        logger.info("finish");
     }
 
     public static void doAnt(Command command) throws IOException {
         logger.info("read ant sword method");
         MethodDeclaration antMethod = Base.getMethod("Ant.java");
+
         logger.info("read ant sword base64 method");
         MethodDeclaration antDecMethod = Base.getMethod("AntBase64.java");
+
         logger.info("read decrypt method");
         MethodDeclaration decMethod = Base.getMethod("Dec.java");
         List<ClassOrInterfaceDeclaration> antClasses = Base.getAntClass();
@@ -179,6 +116,7 @@ public class Application {
         if (antMethod == null) {
             return;
         }
+
         List<ArrayInitializerExpr> arrayExpr = antMethod.findAll(ArrayInitializerExpr.class);
         StringLiteralExpr expr = (StringLiteralExpr) arrayExpr.get(0).getValues().get(1);
         expr.setValue(command.password);
@@ -240,8 +178,9 @@ public class Application {
         logger.info("finish");
     }
 
-    public static void doProxy(Command command) throws IOException {
-        Base.classLoaderBase(command, "Proxy.java", false);
+    // 已分析
+    public static void doSimple(Command command) throws IOException {
+        Base.base(command, "Base.java");
     }
 
     // 已分析
@@ -257,8 +196,77 @@ public class Application {
     }
 
     // 已分析
-    public static void doSimple(Command command) throws IOException {
-        Base.base(command, "Base.java");
+    public static void doBcel(Command command) throws IOException {
+        logger.info("read bcel method");
+        MethodDeclaration bcelMethod = Base.getMethod("Bcel.java");
+
+        logger.info("read decrypt method");
+        MethodDeclaration decMethod = Base.getMethod("Dec.java");
+
+        if (bcelMethod == null || decMethod == null) {
+            return;
+        }
+
+        byte[] resultByte = ByteCodeEvilDump.dump("test/ByteCodeEvil");
+        if (resultByte == null || resultByte.length == 0) {
+            return;
+        }
+
+        String byteCode = Utility.encode(resultByte, true);
+        byteCode = "$$BCEL$$" + byteCode;
+        logger.info("modify global array");
+
+        List<VariableDeclarator> vds = bcelMethod.findAll(VariableDeclarator.class);
+        for (VariableDeclarator vd : vds) {
+            if (vd.getNameAsString().equals("globalArr")) {
+                List<StringLiteralExpr> sles = vd.findAll(StringLiteralExpr.class);
+                //首部加上 $$BCEL$$ ，这样才能正确运行
+                sles.get(1).setValue(byteCode);
+            }
+        }
+        // 开始混淆
+        String newDecName = Base.decCodeOperate(decMethod);
+        Base.normalOperate(bcelMethod, newDecName);
+
+        WriteUtil.write(bcelMethod, decMethod, command.password, command.unicode, command.output);
+        logger.info("finish");
+    }
+
+    // 已分析
+    public static void doJavac(Command command) throws IOException {
+        logger.info("read javac method");
+        MethodDeclaration javacMethod = Base.getMethod("Javac.java");
+
+        logger.info("read decrypt method");
+        MethodDeclaration decMethod = Base.getMethod("Dec.java");
+        if (javacMethod == null || decMethod == null) {
+            return;
+        }
+
+        String newDecName = Base.decCodeOperate(decMethod);
+        Base.normalOperate(javacMethod, newDecName);
+        WriteUtil.writeJavac(javacMethod, decMethod, command.password, command.unicode, command.output);
+        logger.info("finish");
+    }
+
+    // 已分析
+    public static void doProxyAsm(Command command) throws IOException {
+        Base.asmBase(command, "ProxyAsm.java", false);
+    }
+
+    // 已分析
+    public static void doProxy(Command command) throws IOException {
+        Base.classLoaderBase(command, "Proxy.java", false);
+    }
+
+    // 已分析
+    public static void doClassLoaderAsm(Command command) throws IOException {
+        Base.asmBase(command, "CLAsm.java", true);
+    }
+
+    // 已分析
+    public static void doBcelAsm(Command command) throws IOException {
+        Base.asmBase(command, "BcelAsm.java", false);
     }
 
 }

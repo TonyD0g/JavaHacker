@@ -1,6 +1,7 @@
 package org.sec.util;
 
 public class UnicodeUtil {
+    // unicode编码
     public static String encodeString(String str) {
         str = (str == null ? "" : str);
         String tmp;

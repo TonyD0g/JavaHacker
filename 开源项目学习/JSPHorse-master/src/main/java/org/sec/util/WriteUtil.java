@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 public class WriteUtil {
     private static final Logger logger = Logger.getLogger(WriteUtil.class);
 
+
     public static void writeAnt(String antClassCode, String antCode,
                                 String antDecCode, String decCode, String output) {
         try {
@@ -43,10 +44,12 @@ public class WriteUtil {
             String passwordCode = "<%! String PASSWORD = \"" + password + "\"; %>";
             String code = method.getBody().isPresent() ? method.getBody().get().toString() : null;
             String decCode = decMethod.toString();
+
             if (code != null && decCode != null) {
                 String source = code.substring(1, code.length() - 2);
                 String newCode = compactCode(source);
                 String newDecCode = compactCode(decCode);
+
                 if (useUnicode) {
                     logger.info("use unicode encode");
                     newCode = UnicodeUtil.encodeString(newCode);
@@ -57,6 +60,7 @@ public class WriteUtil {
                     String output = prefix + passwordCode + "<%!" + decCode + "%><%" + source + " %>";
                     FileUtil.writeFile(outputFile, output);
                 }
+
             }
         } catch (Exception e) {
             logger.error(e.getMessage());

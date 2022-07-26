@@ -14,6 +14,7 @@ public class FileUtil {
         return doReadFile(is);
     }
 
+    // 读文件
     private static String doReadFile(InputStream is) throws IOException {
         ByteArrayOutputStream byteData = new ByteArrayOutputStream();
         byte[] temp = new byte[1024];
@@ -29,6 +30,7 @@ public class FileUtil {
         return str;
     }
 
+    // 写文件
     public static void writeFile(String filename, String output) throws IOException {
         File file = new File(filename);
         BufferedWriter bw = new BufferedWriter(
@@ -39,6 +41,7 @@ public class FileUtil {
         bw.close();
     }
 
+    // 获取文件扩展名
     public static String getFileExt(String filename) {
         String[] splits = filename.split("\\.");
         return splits[splits.length - 1];

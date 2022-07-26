@@ -3,6 +3,7 @@ package org.sec.util;
 import java.util.Random;
 
 public class RandomUtil {
+    // 根据字符串长度生成随机变量名 逻辑还是挺清晰的
     public static String getRandomString(int length) {
         try {
             // Sleep保证随机

@@ -15,11 +15,13 @@ import java.util.Map;
 public class IdentifyModule {
     private static final Logger logger = Logger.getLogger(IdentifyModule.class);
 
+    // 异曲同工，都是调用同一个方法
     public static void doIdentify(MethodDeclaration method) {
         logger.info("do identify operate in method");
         doCallableIdentify(method);
     }
 
+    // 异曲同工，都是调用同一个方法
     public static void doConstructIdentify(ConstructorDeclaration cd) {
         logger.info("do identify operate in constructor");
         doCallableIdentify(cd);

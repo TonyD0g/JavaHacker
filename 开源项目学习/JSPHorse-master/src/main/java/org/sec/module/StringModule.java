@@ -21,9 +21,7 @@ public class StringModule {
         Random random = new Random();
         random.setSeed(System.currentTimeMillis());
         int offset1 = random.nextInt(9) + 1;
-        int offset2 = random.nextInt(9) + 1;
         croptoArray.offset1 = offset1;
-        croptoArray.offset2 = offset2;
 
         // 获取文件中的所有字符串,并进行处理
         List<StringLiteralExpr> stringList = method.findAll(StringLiteralExpr.class);
@@ -47,7 +45,7 @@ public class StringModule {
 
     }
 
-    // 凯撒解密函数，(有些不理解)
+    // 凯撒解密函数
     public static void changeRef(MethodDeclaration method, CroptoArray offset) {
         logger.info("change variable name in global array");
 
@@ -69,6 +67,8 @@ public class StringModule {
                 a.setIndex(expr.getIndex());
 
                 // 第一个参数为原来的数组调用
+                // (这里说的参数指的是 resources/Dec.java 文件的 dec 函数的两个参数：String str, int offset)
+
                 nodeList.add(a);
                 // 记录的offset需要传入第二个参数
                 IntegerLiteralExpr intValue = new IntegerLiteralExpr();
