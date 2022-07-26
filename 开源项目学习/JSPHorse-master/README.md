@@ -1,9 +1,5 @@
-正在更新：
-
-[+] 再套一层凯撒
-
 # 前言
-学习下4ra1n师傅的代码，并加点自己的一点代码（即屎山）
+学习下4ra1n师傅的代码，并加点自己的一点垃圾代码（已写了一些注释，方便理解）
 
 因为4ra1n师傅退圈了，无法联系到，所以如果侵犯了您的权益，请联系我删除
 
@@ -29,7 +25,7 @@ D:\Soft1\jdk\jdk1.8\bin\java.exe -cp  JSPHorse.jar org.sec.Main -p 233 --bcel-as
 
 tomcat环境：
 
-### Apache Tomcat/9.0.65
+ Apache Tomcat/9.0.65
 
 
 ## 原文：
