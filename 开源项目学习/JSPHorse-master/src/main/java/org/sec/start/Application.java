@@ -149,8 +149,8 @@ public class Application {
         if (decMethod == null || antDecMethod == null) {
             return;
         }
-        CroptoArray croptoArray = StringModule.encodeString(antDecMethod);
-        StringModule.changeRef(antDecMethod, croptoArray);
+        int offset = StringModule.encodeString(antDecMethod);
+        StringModule.changeRef(antDecMethod, offset);
         XORModule.doXOR(antDecMethod);
         XORModule.doXOR(antDecMethod);
         logger.info("generate ant sword core code");

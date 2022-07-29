@@ -50,9 +50,9 @@ public class Base {
         SwitchModule.changeSwitch(method, newValue);
 
         // 加密字符串常量，设置凯撒加密的偏移
-        CroptoArray croptoArray = StringModule.encodeString(method);
+        int offset = StringModule.encodeString(method);
         // 凯撒解密函数
-        StringModule.changeRef(method, croptoArray);
+        StringModule.changeRef(method, offset);
         // 给字符串随机重命名
         IdentifyModule.doIdentify(method);
         // 双重异或加密数字
@@ -70,10 +70,10 @@ public class Base {
     protected static String decCodeOperate(MethodDeclaration decMethod) {
 
         // 加密字符串常量，设置凯撒加密的偏移
-        CroptoArray croptoArray = StringModule.encodeString(decMethod);
+        int offset = StringModule.encodeString(decMethod);
 
         // 凯撒解密函数
-        StringModule.changeRef(decMethod, croptoArray);
+        StringModule.changeRef(decMethod, offset);
 
         // 给字符串随机重命名
         IdentifyModule.doIdentify(decMethod);

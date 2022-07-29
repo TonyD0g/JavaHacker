@@ -26,6 +26,10 @@ public class EncodeUtil {
         }
 
         // 我在原项目的基础上套了层base64,结果发现无法执行了，很奇怪（无报错，加密解密部分均做了处理）
+//        sun.misc.BASE64Encoder encoder = new sun.misc.BASE64Encoder();
+//        String testStr = encoder.encode(str1.toString().getBytes(StandardCharsets.UTF_8));
+//        return encoder.encode(testStr.toString().getBytes(StandardCharsets.UTF_8));
+
 
         // 凯撒后base64一下
         sun.misc.BASE64Encoder encoder = new sun.misc.BASE64Encoder();

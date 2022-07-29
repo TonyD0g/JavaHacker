@@ -14,14 +14,13 @@ public class StringModule {
     private static CroptoArray croptoArray;
 
     // 凯撒加密函数
-    public static CroptoArray encodeString(MethodDeclaration method) {
+    public static int encodeString(MethodDeclaration method) {
         logger.info("encode string variables");
 
         // 取一个随机数
         Random random = new Random();
         random.setSeed(System.currentTimeMillis());
         int offset1 = random.nextInt(9) + 1;
-        croptoArray.offset1 = offset1;
 
         // 获取文件中的所有字符串,并进行处理
         List<StringLiteralExpr> stringList = method.findAll(StringLiteralExpr.class);
@@ -40,13 +39,13 @@ public class StringModule {
             }
         }
         // 记录偏移量
-        return croptoArray;
+        return offset1;
 
 
     }
 
     // 凯撒解密函数
-    public static void changeRef(MethodDeclaration method, CroptoArray offset) {
+    public static void changeRef(MethodDeclaration method, int offset) {
         logger.info("change variable name in global array");
 
         // 所有的数组访问对象

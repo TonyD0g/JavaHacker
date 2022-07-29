@@ -6,7 +6,11 @@ package org.sec.util;
 public class Dec {
     public static String dec(String str, int offset) {
         try {
+           // byte[] code1 = new sun.misc.BASE64Decoder().decodeBuffer(str);
+           // byte[] code = new sun.misc.BASE64Decoder().decodeBuffer(code1);
+
             byte[] code = new sun.misc.BASE64Decoder().decodeBuffer(str);
+
             str = new String(code);
             char c;
             StringBuilder str1 = new StringBuilder();
