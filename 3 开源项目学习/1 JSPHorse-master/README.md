@@ -1,34 +1,26 @@
 # 前言
-学习下4ra1n师傅的代码，并加点自己的一点垃圾代码（已写了一些注释，方便理解）
-
-因为4ra1n师傅退圈了，无法联系到，所以如果侵犯了您的权益，请联系我删除
+学习下`4ra1n`师傅的代码，并加点自己的一点垃圾代码（已写了一些注释，方便理解）
 
 
 # 使用说明：
-源代码启动路径：
-
+```md
+a. 源代码启动路径：
 JSPHorse-master.zip\JSPHorse-master\src\main\java\org\sec
 
 
 
-源代码使用的jdk：
+b. 源代码使用的jdk：jdk8
 
-jdk8
-
-
-
-运行jar：
-
+c. 运行jar：
 D:\Soft1\jdk\jdk1.8\bin\java.exe -cp  JSPHorse.jar org.sec.Main -p 233 --bcel-asm -u
 
 
 
-tomcat环境：
+d. tomcat环境：Apache Tomcat/9.0.65
+```
 
- Apache Tomcat/9.0.65
 
-
-## 原文：
+## 原文如下：
 
 # JSPHorse
 
