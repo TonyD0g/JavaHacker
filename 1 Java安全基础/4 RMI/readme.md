@@ -1,4 +1,8 @@
+**前言:**
+
 ## [Java安全漫谈 - 05.利用codebase攻击RMI Registry](https://t.zsxq.com/BuFy3zF)
+
+ [JAVA安全基础（四）-- RMI机制](https://xz.aliyun.com/t/9261)
 
 ### RMI有三个参与方:
 RMI Registry
