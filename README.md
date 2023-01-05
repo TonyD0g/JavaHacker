@@ -2,7 +2,7 @@
 
 —— 记录自己学习Java安全的过程,`无技术含量`
 
-在学习Java安全的过程中很迷茫，遂做记录希望能方便后来学习者
+在学习Java安全的过程中很迷茫，遂做记录方便复习
 
 **在此感谢前辈们的研究成果，没有他们就没有我如此方便学习Java安全**
 
@@ -20,14 +20,45 @@
 
 ---
 
-### 大纲
+### Java安全技能树——正在点技能树中
 
-```md
-- 0 Java编程基础
-- 1 Java安全基础
-- 2 Java反序列化
-- 3 开源项目学习
-```
+**1.Java安全基础**
+
+- 反射机制
+
+-  类加载机制
+-  动态代理机制
+-  RMI
+-  本地命令执行和反弹shell
+
+**2.Java反序列化**
+
+- URLDNS链
+- CC1
+
+**3.开源项目学习**
+
+- JSPHorse-master	和 [JSP免杀学习](https://tttang.com/archive/1315/#toc_0x00)
+- 冰蝎自定义协议仿写
+- 
+
+​	
+
+---
+
+### 我的学习历程
+
+- 反射机制
+- 类加载机制
+- 动态代理机制
+- RMI
+- URLDNS链
+- 本地命令执行和反弹shell
+- 冰蝎自定义协议仿写,可以写个凯撒加密或者RC4等。
+- JSPHorse-master**(先简单了解一般的安全工具架构即可，有些涉及AST技术的操作先跳过)**,[JSP免杀学习](https://tttang.com/archive/1315/#toc_0x00)同时看,是一起的
+- CC1
+
+---
 
 ### 用到即查
 
@@ -39,22 +70,16 @@ https://www.w3cschool.cn/java/dict
 
 https://docs.oracle.com/javase/8/docs/api/
 
+**参考:**
 
+https://github.com/Drun1baby/JavaSecurityLearning
 
----
+[GitHub - phith0n/JavaThings: Share Things Related to Java - Java安全漫谈笔记相关内容](https://github.com/phith0n/JavaThings)
 
-### Java安全技能树——正在点技能树中
+[Y4tacker/JavaSec](https://github.com/Y4tacker/JavaSec)
 
-从上到下按顺序学就行
+[JavaSec](https://javasec.org/)
 
-**1.Java安全基础**
+[JavaSecurityLearning](https://github.com/Drun1baby/JavaSecurityLearning)
 
-- 反射机制
-
--  类加载机制
--  动态代理机制
--  RMI
-
-**2.Java反序列化**
-
-- URLDNS链
+等
