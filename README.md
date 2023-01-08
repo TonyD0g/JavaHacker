@@ -18,6 +18,8 @@
 
 4.个人能力有限，大多是个人的理解。如出错欢迎提交issue
 
+5.**不是教学贴，只是记录自己学习Java安全的过程**，更像是读书笔记，所以不是很详细。
+
 ---
 
 ### Java安全技能树——正在点技能树中
@@ -55,8 +57,8 @@
 - URLDNS链
 - 本地命令执行和反弹shell
 - 冰蝎自定义协议仿写,可以写个凯撒加密或者RC4等。
-- JSPHorse-master**(先简单了解一般的安全工具架构即可，有些涉及AST技术的操作先跳过)**,[JSP免杀学习](https://tttang.com/archive/1315/#toc_0x00)同时看,是一起的
-- CC1
+- JSPHorse-master **(先简单了解一般的安全工具架构即可，有些涉及AST技术的操作先跳过)**,和[JSP免杀学习](https://tttang.com/archive/1315/#toc_0x00)同时看,是一起的
+- CC1 TransformMap链
 
 ---
 
