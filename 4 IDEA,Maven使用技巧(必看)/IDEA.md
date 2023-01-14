@@ -55,3 +55,9 @@ ctrl + shift + -
 #### 一键展开所有代码
 
 ctrl + shift + +
+
+
+
+#### 快速搜索：
+
+按两次 shift
