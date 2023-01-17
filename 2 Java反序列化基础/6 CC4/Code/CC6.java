@@ -1,9 +1,9 @@
-import org.apache.commons.collections.Transformer;
-import org.apache.commons.collections.functors.ChainedTransformer;
-import org.apache.commons.collections.functors.ConstantTransformer;
-import org.apache.commons.collections.functors.InvokerTransformer;
-import org.apache.commons.collections.keyvalue.TiedMapEntry;
-import org.apache.commons.collections.map.LazyMap;
+import org.apache.commons.collections4.Transformer;
+import org.apache.commons.collections4.functors.ChainedTransformer;
+import org.apache.commons.collections4.functors.ConstantTransformer;
+import org.apache.commons.collections4.functors.InvokerTransformer;
+import org.apache.commons.collections4.keyvalue.TiedMapEntry;
+import org.apache.commons.collections4.map.LazyMap;
 
 import java.io.*;
 import java.lang.reflect.Field;
@@ -33,12 +33,12 @@ public class CommonCollections6 {
         // 和CC1-LazyMap相比，基本没变。只不过这里传的是 fakeTransformers
         Transformer transformerChain = new ChainedTransformer(fakeTransformers);
         Map innerMap = new HashMap();
-        Map outerMap = LazyMap.decorate(innerMap, transformerChain);
+        Map outerMap = LazyMap.lazyMap(innerMap, transformerChain);
 
         // 引入 TiedMapEntry
         TiedMapEntry tiedMapEntry = new TiedMapEntry(outerMap, "keyForTest");
         Map expMap = new HashMap();
-        
+
         expMap.put(tiedMapEntry, "value");
         outerMap.remove("keyForTest");
 

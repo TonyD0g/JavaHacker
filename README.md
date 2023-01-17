@@ -37,30 +37,14 @@
 
 - URLDNS链
 - CC1
-- CC6
+- CC6，CC6-Shiro
+- CC3
 
 **3.开源项目学习**
 
 - JSPHorse-master	和 [JSP免杀学习](https://tttang.com/archive/1315/#toc_0x00)
 - 冰蝎自定义协议仿写
 - 
-
-​	
-
----
-
-### 我的学习历程
-
-- 反射机制
-- 类加载机制
-- 动态代理机制
-- RMI
-- URLDNS链
-- 本地命令执行和反弹shell
-- 冰蝎自定义协议仿写,可以写个凯撒加密或者RC4等。
-- JSPHorse-master **(先简单了解一般的安全工具架构即可，有些涉及AST技术的操作先跳过)**,和[JSP免杀学习](https://tttang.com/archive/1315/#toc_0x00)同时看,是一起的
-- CC1 TransformMap链，LazyMap链
-- CC6-简化版本
 
 ---
 
