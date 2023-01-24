@@ -39,6 +39,10 @@
 - CC1
 - CC6，CC6-Shiro
 - CC3
+- CC6-Shiro550
+- CC4
+- Commons Beanutils,CB无依赖
+- JDK7u21
 
 **3.开源项目学习**
 

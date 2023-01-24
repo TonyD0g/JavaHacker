@@ -10,3 +10,6 @@
 - CC6-简化版本
 - CC3
 - CC6-Shiro550
+- CC4
+- Commons Beanutils,cb无依赖
+- JDK7u21
