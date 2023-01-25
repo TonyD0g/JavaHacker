@@ -164,6 +164,8 @@ String.CASE_INSENSITIVE_ORDER);
 
 【完整代码查看：CB-shiro无依赖.java】
 
+利用链同 【2-1 CB利用链】
 
+---
 
  **java.lang.String.CaseInsensitiveComparator** 类可替换为 **java.util.Collections$ReverseComparator**，原理相同。
