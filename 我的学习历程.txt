@@ -13,3 +13,7 @@
 - CC4
 - Commons Beanutils,cb无依赖
 - JDK7u21
+- 利用zkar初识序列化结构
+- cc2
+- cc5
+- cc7
