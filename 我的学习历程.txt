@@ -18,3 +18,5 @@
 - cc5
 - cc7
 - 攻击rmi
+- JNDI
+- Fastjson基础

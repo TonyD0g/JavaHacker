@@ -14,8 +14,6 @@ ctrl + alt + u
 
 ctrl + g
 
-
-
 #### 一键整理代码
 
 ctrl + alt + L
@@ -67,3 +65,13 @@ ctrl + shift + +
 #### 来回跳转
 
 ctrl + alt +左/右键
+
+
+
+#### Debug技巧:
+
+https://blog.csdn.net/qq_43102730/article/details/125252811
+
+
+
+**IDEA左侧双击文件，新建tab。左侧单击文件，替换tab**

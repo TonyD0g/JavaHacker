@@ -34,29 +34,33 @@
 -  动态代理机制
 -  RMI，RMI攻击
 -  本地命令执行和反弹shell
+-  JNDI
 
 **2.Java反序列化**
 
 - URLDNS链
-- CC1
-- CC6，CC6-Shiro
-- CC3
-- CC6-Shiro550
-- CC4
-- Commons Beanutils,CB无依赖
+- CC
+
+  - CC1
+  - CC6，CC6-Shiro
+  - CC3
+  - CC6-Shiro550
+  - CC4
+  - Commons Beanutils,CB无依赖
+  - cc2
+  - cc5
+  - cc7
 - JDK7u21
 - 利用zkar初识序列化结构
-- cc2
-- cc5
-- cc7
 
 **3.开源项目学习**
 
 - JSPHorse-master	和 [JSP免杀学习](https://tttang.com/archive/1315/#toc_0x00)
-
 - 冰蝎自定义协议仿写
 
-  
+**4.Fastjson**
+
+- Fastjson基础
 
 ---
 
