@@ -75,3 +75,10 @@ https://blog.csdn.net/qq_43102730/article/details/125252811
 
 
 **IDEA左侧双击文件，新建tab。左侧单击文件，替换tab**
+
+
+
+#### 快速生成Getter,Setter,构造函数等
+
+Alt + insert 键
+
