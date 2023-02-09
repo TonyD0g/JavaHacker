@@ -20,3 +20,6 @@
 - 攻击rmi
 - JNDI
 - Fastjson基础
+- Fastjson 1.2.24
+- Fastjson 1.2.24以上版本绕过
+- Fastjson1.2.62-1.2.68版本反序列化
