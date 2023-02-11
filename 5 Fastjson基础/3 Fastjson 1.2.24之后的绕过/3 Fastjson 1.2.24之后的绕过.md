@@ -22,7 +22,7 @@
 
 可在 **ParserConfig.java** 中进行选择开启/关闭
 
-【详情代码查看,有注释：checkAutoType.java】
+【详情代码查看,有注释：**checkAutoType.java**】
 
 
 
@@ -109,7 +109,9 @@ DefaultJSONParser.parseArray 674
 
 所以我自己进行了调试：
 
-![](/Pic/1.png)
+![](Pic/1.png)
+
+
 
 核心关键点在于：**JavaBeanDeserializer.deserialze 403行**，
 
