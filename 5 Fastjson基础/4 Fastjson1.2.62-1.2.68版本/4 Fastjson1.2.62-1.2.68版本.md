@@ -2,7 +2,7 @@
 
 1.必读
 
-[Java 反序列化 Fastjson 篇 04-Fastjson 1.2.62-1.2.68 版本反序列化漏洞](https://drun1baby.github.io/2022/08/13/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96Fastjson%E7%AF%8704-Fastjson1-2-62-1-2-68%E7%89%88%E6%9C%AC%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/)
+https://johnfrod.top/%e5%ae%89%e5%85%a8/704/
 
 ---
 
@@ -219,6 +219,8 @@ org.apache.shiro.jndi.JndiObjectFactory类:
 
 2.环境搭建：
 
+(将Exp和VulAutoCloseable.java放在执行目录下)
+
 ![](Pic/1.png)
 
 **攻击步骤为：**
@@ -226,7 +228,7 @@ org.apache.shiro.jndi.JndiObjectFactory类:
 1. 先传入某个类，其加载成功后将作为expectClass参数传入`checkAutoType()`函数；
 2. 查找expectClass类的子类或实现类，如果存在这样一个子类或实现类的**构造方法或setter**方法中存在危险操作则可以被攻击利用；
 
-关键判断：
+### 关键流程分析：
 
 **第一次进入**`ParserConfig.checkAutoType()`：
 
@@ -346,7 +348,7 @@ if (expectClass != null) {
 
 
 
-**如果还是不懂，自行调试，附上变量值：**
+**如果还是不懂，自行下断点在前面提到的xx行进行调试，附上变量值：**
 
 第一次：
 
@@ -364,4 +366,83 @@ if (expectClass != null) {
 3.clazz = null (执行完1402行后) => 
   clazz = VulAutoCloseable
 ```
+
+---
+
+前面提到过，VulAutoCloseable.java放在执行目录下（比作放在Fastjson服务端上），然而实际上不可能有这么简单的可直接利用的类给你，所以需要考虑用何种方法将demo代码真正利用在开发环境中。
+
+【详情代码查看：1.2.68-demo.java】
+
+### 实际利用：
+
+前言：
+
+安装依赖：
+
+```xml
+<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjtools</artifactId>
+    <version>1.9.5</version>
+</dependency>
+<dependency>
+    <groupId>com.esotericsoftware</groupId>
+    <artifactId>kryo</artifactId>
+    <version>4.0.0</version>
+</dependency>
+<dependency>
+    <groupId>com.sleepycat</groupId>
+    <artifactId>je</artifactId>
+    <version>5.0.73</version>
+</dependency>
+```
+
+
+
+我看完博客后理解不了，所以整理一下方便理解：
+
+【警告：由于Maven解析依赖一直持续中，导致我无法成功复现这个漏洞，所以这个利用链是看文章总结的，并未亲手调试！所以可能有错误，想求真就自行调试】
+
+利用链：
+
+```java
+// 一。需要用到两个条件：
+1.复制文件:
+    org.eclipse.core.internal.localstore.SafeFileOutputStream
+//  SafeFileOutputStream的构造函数：如果targetPath文件不存在且tempPath文件存在，就会把tempPath复制到targetPath中
+
+2.写入文件:
+com.esotericsoftware.kryo.io.Output
+    
+// 二。实际利用：    
+// 第一步    
+ObjectOutputStream.BlockDataOutputStream#BlockDataOutputStream()
+
+// 第二步  
+// 但是Fastjson优先获取的是ObjectOutputStream类的无参构造函数，因此只能找ObjectOutputStream的继承类来触发了,这里替换为com.sleepycat.bind.serial.SerialOutput
+ObjectOutputStream.ObjectOutputStream(OutputStream out) => 
+com.sleepycat.bind.serial.SerialOutput#SerialOutput    
+    ObjectOutputStream.BlockDataOutputStream.setBlockDataMode()
+        ObjectOutputStream.drain()
+         write相关函数(这里用到的是out.write())
+            require()
+                Output.flush()    
+                    Output.setBuffer , Output.setOutputStream(new SafeFileOutputStream)   
+```
+
+【详情代码查看：1.2.68.java】
+
+**如何防御的：**
+
+老样子，扔黑名单去
+
+**1.2.68及之后版本新增内容：SafeMode：**
+
+【checkAutoType.java】有详解，简而言之开启了SafeMode,没Fastjson漏洞。
+
+---
+
+## 另外一些版本的Gadget
+
+[自行点击查阅](https://drun1baby.github.io/2022/08/13/Java%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96Fastjson%E7%AF%8704-Fastjson1-2-62-1-2-68%E7%89%88%E6%9C%AC%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/#toc-heading-24)，就不复制粘贴了。
 

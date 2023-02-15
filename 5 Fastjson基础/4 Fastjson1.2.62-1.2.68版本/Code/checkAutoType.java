@@ -11,7 +11,7 @@ public Class<?> checkAutoType(String typeName, Class<?> expectClass, int feature
                 }
             }
         }
-
+        // 判断是否开启了safeMode,safeMode开启后,完全禁用AutoType即@type,就无Fastjson漏洞了
         final int safeModeMask = Feature.SafeMode.mask;
         boolean safeMode = this.safeMode
                 || (features & safeModeMask) != 0
