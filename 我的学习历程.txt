@@ -24,7 +24,25 @@
 - Fastjson 1.2.24以上版本绕过
 - Fastjson1.2.62-1.2.68版本反序列化
 - 浅学设计模式（策略,观察者,装饰,工厂,抽象工厂）（安全开发必看）
+- jvm基础
+	参考：
+		视频链接：
+		【黑马程序员JVM完整教程，Java虚拟机快速入门，全程干货不拖沓】https://www.bilibili.com/video/BV1yE411Z7AP?p=54&vd_source=1133eb6c801917b16b324ad28ad16d2e
+
+		书籍：《深入理解Java虚拟机第三版 周志明》
+
+		博客: https://nyimac.gitee.io/2020/07/03/JVM%E5%AD%A6%E4%B9%A0/#JVM%E5%AD%A6%E4%B9%A0
+			  https://javaguide.cn/java/jvm/memory-area.html	
+
+    没看的地方：
+		GC调优没看：85~95 
+		96~105讲的很模糊，直接看文档：https://javaguide.cn/java/jvm/class-file-structure.html
+		运行期优化没看：159~184
+
+	难点：p32,33,34 ,p51 52 53, p62, p120~122
+
+	关键：
+		字节码执行引擎：p109 ~ 128 
+- java asm基础
 - spring
 - 内存马
-- jvm
-- java asm
