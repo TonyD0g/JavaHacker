@@ -2,9 +2,11 @@
 
 学习来源：
 
-https://lsieun.github.io/java/asm/java-asm-season-01.html
+[Java ASM系列一:Core API](https://lsieun.github.io/java/asm/java-asm-season-01.html)
 
+ [Java字节码的详细讲解-刘宇](https://blog.csdn.net/liuyu973971883/article/details/120168986)
 
+[ASM 5.0.3 Doc](https://www.javadoc.io/doc/org.ow2.asm/asm/5.0.3/index.html)
 
 环境：
 

@@ -4,8 +4,8 @@
 - RMI
 - URLDNS链
 - 本地命令执行和反弹shell
-- 冰蝎自定义协议仿写,可以写个凯撒加密或者RC4等。
-- JSPHorse-master **(先简单了解一般的安全工具架构即可，有些涉及AST技术的操作先跳过)**,和[JSP免杀学习](https://tttang.com/archive/1315/#toc_0x00)同时看,是一起的
+- 开源项目/冰蝎自定义协议仿写,可以写个凯撒加密或者RC4等。
+- 开源项目/JSPHorse-master **(先简单了解一般的安全工具架构即可，有些涉及AST技术的操作先跳过)**,和[JSP免杀学习](https://tttang.com/archive/1315/#toc_0x00)同时看,是一起的
 - CC1 TransformMap链，LazyMap链
 - CC6-简化版本
 - CC3
@@ -42,7 +42,8 @@
 	难点：p32,33,34 ,p51 52 53, p62, p120~122
 
 	关键：
-		字节码执行引擎：p109 ~ 128 
+		字节码执行引擎：p109 ~ 128 +++
 - java asm基础
+- 开源项目/基于污点分析的JSP Webshell检测
 - spring
 - 内存马
