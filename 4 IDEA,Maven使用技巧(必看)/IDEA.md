@@ -2,7 +2,7 @@
 
 ctrl + h
 
-**可视化效果：**
+**可视化效果(付费版)：**
 
 ctrl + alt + u 
 
@@ -82,3 +82,14 @@ https://blog.csdn.net/qq_43102730/article/details/125252811
 
 Alt + insert 键
 
+
+
+#### 文档注释：
+
+https://zhuanlan.zhihu.com/p/369072725
+
+
+
+#### 打开方法参数提示：
+
+https://blog.51cto.com/u_14301180/5353971
