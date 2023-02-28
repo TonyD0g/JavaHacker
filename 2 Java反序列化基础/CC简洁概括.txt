@@ -1,10 +1,19 @@
 cc1: TransformedMap,LazyMap
+
 cc6: 解决高版本不能利用的问题,利用动态代理机制。
+
 cc3: 解决命令执行黑名单的问题，通过TemplatesImpl加载字节码
+
 cc6-shiro: 解决编写shiro反序列化链子时，如果反序列化流中包含非Java自身的数组，则会出现无法加载类的错误.因为其中用到了Transformer数组
+
 cc4: 1.特征修改 2.PriorityQueue利⽤链,利用反序列化时重排序，从而执行transform
+
 cb链：利用getter去获取TemplatesImpl.getOutputProperties,从而执行TemplatesImpl#newTransformer()
+
 cb-shiro: shiro反序列时需要cc库,可以有不需要cc库的方法：用shiro/java/cb自带的Comparator
+
 jdk7u21: 利用HashMap的equals方法触发AnnotationInvocationHandler动态代理,调用TemplatesImpl.newTransformer()
+
 cc5: cc1-LazyMap的基础上，将链首部分换掉。
+
 cc7: 和cc5一样，皆是CC1的替代版本,替换掉链首部分,利用HashMap和LazyMap的equals方法

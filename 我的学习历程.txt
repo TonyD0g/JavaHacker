@@ -45,5 +45,6 @@
 		字节码执行引擎：p109 ~ 128 
 - java asm基础
 - 开源项目/基于污点分析的JSP Webshell检测
+- 开源项目/GadgetInspector
 - spring
 - 内存马

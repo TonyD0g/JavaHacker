@@ -116,7 +116,7 @@ Python的反序列化过程实际上是在执行一个基于栈的虚拟机。�
 
 
 
-触发反序列列化的方法是 `readObject` ，因为Java开发者（包括Java内置库的开发者）经
+触发反序列化的方法是 `readObject` ，因为Java开发者（包括Java内置库的开发者）经
 常会在这⾥⾯写自己的逻辑，所以导致可以构造利用链。
 
 1. 查看第一层`HashMap.readObject()`方法，发现第二层`HashMap.putVal() ` 中的 `HashMap.hash() `方法
@@ -208,7 +208,7 @@ public synchronized int hashCode() {
 要构造这个Gadget，只需要初始化⼀个 java.net.URL 对象，作为 key 放在 java.util.HashMap
 中；然后，设置这个 URL 对象的 hashCode 为初始值 -1 ，这样反序列列化时将会重新计算
 其 hashCode ，才能触发到后面的DNS请求，否则不会调用 URL->hashCode() 。
-另外，ysoserial为了了防止在⽣生成Payload的时候也执行了URL请求和DNS查询，所以重写了一
-个 SilentURLStreamHandler 类，这不不是必须的。
+另外，ysoserial为了防止在生成Payload的时候也执行了URL请求和DNS查询，所以重写了一
+个 SilentURLStreamHandler 类，这不是必须的。
 ```
 

@@ -93,3 +93,9 @@ https://zhuanlan.zhihu.com/p/369072725
 #### 打开方法参数提示：
 
 https://blog.51cto.com/u_14301180/5353971
+
+
+
+#### Java泛型之＜T＞ T、 T、＜T＞用法
+
+https://blog.csdn.net/weixin_52772307/article/details/126868855
