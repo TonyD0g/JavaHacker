@@ -71,7 +71,7 @@ ANEWARRAY java/lang/Class
 
 4.invoke xx方法（调用方法）
 
-**二.方法使用多参数调用:**（？）
+**二.方法使用多参数调用:**
 
 如： `rt.getMethod("exec", String.class)`解析成字节码如下：
 
@@ -79,7 +79,7 @@ ANEWARRAY java/lang/Class
 
 2.载入方法所需的参数 （LDC xxx）
 
-3.创建数组：
+3.创建数组（只不过多参数调用创建多个数组）：
 
 ICONST_0
 ANEWARRAY java/lang/Class（**并且"`ICONST_0` 和  `ANEWARRAY xxx` 会出操作数栈"** ）
@@ -111,7 +111,7 @@ public void visitInsn(int opcode) {
 
 ---
 
-## 污点分析待解决的问题：
+## JSPKiller待解决的问题：
 
 1.多方法情况下（使用jsppaser解决）
 

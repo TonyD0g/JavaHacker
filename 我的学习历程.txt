@@ -38,7 +38,7 @@
 		GC调优没看：85~95 
 		96~105讲的很模糊，直接看文档：https://javaguide.cn/java/jvm/class-file-structure.html
 		运行期优化没看：159~184
-
+s
 	难点：p32,33,34 ,p51 52 53, p62, p120~122
 
 	关键：
@@ -46,5 +46,6 @@
 - java asm基础
 - 开源项目/基于污点分析的JSP Webshell检测
 - 开源项目/GadgetInspector
-- spring
+- spring基础
 - 内存马
+
