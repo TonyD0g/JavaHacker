@@ -27,3 +27,23 @@
 
 目的：获取jar字节码
 
+**3-2 ClassVisit 和 MethodVisit执行顺序**
+
+没啥好说的，直接看文章：
+
+https://lsieun.github.io/java-asm-01/class-visitor-intro.html#mark_2_0_0
+
+https://lsieun.github.io/java-asm-01/method-visitor-intro.html#mark_2_0_0
+
+**3-3 回收class文件**
+
+目的：在JVM执行完后清理jar包中的class文件(利用hook)
+
+
+
+**原文不理解的地方：**
+
+3.2 visitMethod 
+
+---
+
