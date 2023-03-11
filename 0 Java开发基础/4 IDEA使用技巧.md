@@ -94,6 +94,8 @@ https://zhuanlan.zhihu.com/p/369072725
 
 https://blog.51cto.com/u_14301180/5353971
 
+快捷键：ctrl + p
+
 
 
 #### Java泛型之＜T＞ T、 T、＜T＞用法
