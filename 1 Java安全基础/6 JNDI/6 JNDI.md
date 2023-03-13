@@ -54,7 +54,7 @@ Object Factory用于**将Naming Service**（如RMI/LDAP）**中存储的数据�
 
 JNDI支持的服务：
 
-- LDAP （ Lightweight Directory Access Protocol ） 轻量级目录访问协
+- LDAP （ Lightweight Directory Access Protocol ） 轻量级目录访问协议
 - CORBA （ Common Object Request Broker Architecture ） 公共对象请求代理结构服务（不知道干嘛的，用到再说）
 - RMI （ Java Remote Method Invocation ） JAVA 远程远程方法调用注册
 - DNS （ Domain Name Service ）域名服务
