@@ -2,7 +2,7 @@
 
 ### 使用`JSON.parse()`和`JSON.parseObject()`的不同（★）[+]
 
-前者会在JSON字符串中解析字符串获取`@type`指定的类，后者则会直接使用参数中的`class`，并且对应类中所有`getter`和`setter`都会被调用
+前者会在JSON字符串中解析字符串获取`@type`指定的类，后者则会直接使用参数中的`class`，并且对应类中(符合规范的)所有`getter`和`setter`都会被调用
 
 
 
@@ -20,15 +20,15 @@
 
 ### Fastjson在反序列化`byte[]`类型的属性时会做什么事情（★）[+]
 
-将会在反序列化时候进行`base64`编码
+将会在反序列化时进行`base64`编码
 
 
 
 ### 谈谈常见的几种Payload（★★★）[+]
 
-首先是最常见的`JdbcRowSetImpl`利用`JNDI`注入方式触发，需要出网
+首先是最常见的`JdbcRowSetImpl`利用`JNDI`注入方式触发，**需要出网**
 
-利用`TemplatesImpl`类比较鸡肋，需要服务端开启特殊参数
+利用`TemplatesImpl`类比较鸡肋，**需要服务端开启特殊参数**
 
 不出网的利用方式有一种`BasicDataSource`配合`BCEL`可实现`RCE`
 

@@ -44,9 +44,10 @@
 	关键：
 		字节码执行引擎：p109 ~ 128 
 - java基础/java asm基础
-- 开源项目/GadgetInspector
+- 开源项目/GadgetInspector (还没看代码,只看了文章)
 - 开源项目/基于污点分析的JSP Webshell检测
 - java基础/代码整洁之道
+- 内存马基础
 - spring基础
-- 内存马
+
 

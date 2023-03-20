@@ -1,6 +1,6 @@
-cc1: TransformedMap,LazyMap
+cc1: TransformedMap,LazyMap(解决高版本不能利用的问题,利用动态代理机制。)
 
-cc6: 解决高版本不能利用的问题,利用动态代理机制。
+cc6: 利用hashcode进行触发
 
 cc3: 解决命令执行黑名单的问题，通过TemplatesImpl加载字节码
 

