@@ -1,4 +1,4 @@
-## 1.前言
+## 前言
 
 必读:
 
@@ -8,7 +8,7 @@
 
 [Servlet 项目搭建](https://drun1baby.top/2022/08/22/Servlet-%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/)(只看第一种方法,没有Java Enterprise就看有没有Jakarta EE)
 
-[Tomcat 内存马（二）Filter型](https://xz.aliyun.com/t/10362#toc-1)
+[Tomcat 内存马（二）Filter型](https://xz.aliyun.com/t/10362#toc-1)（详情代码调试查看此文章）
 
 ---
 
@@ -63,7 +63,13 @@ pom.xml
 
 ---
 
-## Filter内存马简约概括
+## Filter基础使用
+
+【具体代码参考：TestFilter.java】
+
+---
+
+## Filter内存马核心诉求
 
 1.用jsp写一个servlet
 
@@ -103,6 +109,26 @@ pom.xml
 
 调试过程直接看：[Tomcat 内存马（二）Filter型](https://xz.aliyun.com/t/10362#toc-1)，不再赘述
 
+---
+
+## Filter内存马核心构造
+
+【Filter内存马核心诉求】中提到：
+
+> ​	1.用jsp写一个servlet
+
+> ​	2.注册进tomcat
+
+1.没啥好说的，实例化一个servlet对象即可
+
+2.我们需要去恶意控制 filterMaps 和 filterConfigs,filterDef,去注册filter**(通过反射去实现)**
+
+
+
+【具体代码参考：FilterMemShell.java】（先把此md看完先，再去看代码，建议自己写一遍）
+
+---
+
 ## Filter调试结果分析
 
 Filter的使用过程：
@@ -120,10 +146,38 @@ Filter的创建过程：
 
   跟进去看一下,自行调试，可以发现核心逻辑：
 
-  - filterMaps中为filter集合
+  - filterMaps中为filter集合，里面保存的不是实际的实体，而相当于是JVM中的虚连接(也就是只是个引用)
 
     ![](Pic/3.png)
 
   - filterConfigs中为实际过滤器
 
     ![](Pic/4.png)
+
+
+
+既然我们需要 filterMaps 和 filterConfigs,filterDef 这三个变量,那我们就看看**如何可控他们**
+
+### 控制三个参数
+
+#### fileterMaps
+
+```
+StandardContext#addFilterMapBefore
+StandardContext#addFilterMap
+```
+
+#### filterConfigs
+
+```md
+StandardContext#filterStart
+```
+
+#### filterDef 
+
+```md
+StandardContext#addFilterDef
+```
+
+因此，分析完毕，我们只需要使用反射去调用和修改这三个参数，就能达到自定义注册filter的目的,达到自定义filter的目的后，我们自定义filter的doFilter方法为恶意即可。
+
