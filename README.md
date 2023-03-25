@@ -26,7 +26,14 @@
 
 ### Java安全技能树——正在点技能树中
 
-**1.Java安全基础**
+**1.Java开发基础**
+
+- Java SE
+- 代码整洁之道
+- Java ASM基础
+- IDEA使用技巧
+
+**2.Java安全基础**
 
 - 反射机制
 
@@ -37,7 +44,7 @@
 -  JNDI
 -  JVM基础（JVM结构，垃圾回收机制/器，字节码结构，执行引擎等）
 
-**2.Java反序列化**
+**3.Java反序列化**
 
 - URLDNS链
 - CC
@@ -54,27 +61,32 @@
 - JDK7u21
 - 利用zkar初识序列化结构
 
-**3.开源项目学习**
+**4.开源项目学习**
 
 - JSPHorse-master	和 [JSP免杀学习](https://tttang.com/archive/1315/#toc_0x00)
 - 冰蝎自定义协议仿写
 - JSPKiller
 - Gadgetinspector
 
-**4.Fastjson**
+**5.Fastjson**
 
 - Fastjson基础
 - Fastjson 1.2.24
 - Fastjson 1.2.24以上版本绕过
 - Fastjson1.2.62-1.2.68版本反序列化
 
-**5.Spring基础**
+**6.Spring基础**
 
 - 浅学设计模式（策略,观察者,装饰,工厂,抽象工厂）（安全开发必看）
 
 - 代码整洁之道（安全开发必看）
 
 - Spring基础
+
+**7.内存马基础**
+
+- 内存马基础
+- Filter型内存马
 
 ---
 
