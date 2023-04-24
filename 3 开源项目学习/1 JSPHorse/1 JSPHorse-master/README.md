@@ -54,7 +54,7 @@ d. tomcat环境：Apache Tomcat/9.0.65
 　　7　　　　　　　|／
 　　＞―r￣￣~∠--|
 ```
-
+bcel-asm -u
 主要的免杀技术：
 
 - 基本的Java反射调用免杀
@@ -165,7 +165,7 @@ d. tomcat环境：Apache Tomcat/9.0.65
 
 从混淆程度来看，最高的应该是以下几种，也许会有较高的免杀效果
 
-1. ASM动态生成BCEL字节码并加载：`--bcel-asm -u`
+1. ASM动态生成BCEL字节码并加载：`--`
 2. 使用ScriptEngine加载JS：`--js -u`
 3. 使用Javac动态编译：`--javac -u`
 
