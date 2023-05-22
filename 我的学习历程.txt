@@ -52,6 +52,8 @@
 - Listener型内存马 
 - Servlet型内存马
 - Valve型内存马
+- 学习JSPFinder源码,并改进为JSPHunter
+- 实现java版本的mysql蜜罐:Groundhog
 - spring基础
 
 

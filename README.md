@@ -67,6 +67,8 @@
 - 冰蝎自定义协议仿写
 - JSPKiller
 - Gadgetinspector
+- 学习JSPFinder源码,并改进为JSPHunter
+- 实现java版本的mysql蜜罐:Groundhog
 
 **5.Fastjson**
 

