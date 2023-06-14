@@ -27,7 +27,7 @@ PHP的序列化是开发者不能参与的，开发者调用 serialize 函数后
 
 **2.Java**
 
-Java在序列化时一个对象，将会调用这个对象中的 `writeObject `方法，参数类型是
+Java在序列化一个对象时，将会调用这个对象中的 `writeObject `方法，参数类型是
 `ObjectOutputStream `，开发者可以将任何内容写入这个stream中；反序列化时，会调用`readObject `，开发者也可以从中读取出前面写入的内容，并进行处理。
 
 `writeObject`方法会先调用`ObjectOutputStream`中的`defaultWriteObject()`方法，该方法会执行默认的序列化机制。然后才是`writeObject`

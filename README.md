@@ -69,6 +69,7 @@
 - Gadgetinspector
 - 学习JSPFinder源码,并改进为JSPHunter
 - 实现java版本的mysql蜜罐:Groundhog
+- 基于jvm-sandbox的简易rasp
 
 **5.Fastjson**
 
@@ -92,6 +93,11 @@
 - Listener型内存马
 - Servlet型内存马
 - Valve型内存马
+
+**8.CodeQL基础**
+
+- 基础介绍和基础语法 [CodeQL for Java and Kotlin — CodeQL](https://codeql.github.com/docs/codeql-language-guides/codeql-for-java/)
+- 示例QL文件
 
 ---
 

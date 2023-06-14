@@ -155,7 +155,7 @@ RemoteObj remoteObj = (RemoteObj) registry.lookup("remoteObj");
 
 除了`unbind`和`rebind`之外其他方法都会返回数据给客户端,且返回的是序列化数据。客户端会自动进行反序列化，达成利用。
 
-Payload自己跑去看文章吧，因为都是用工具生成的Payload我看不懂就不记录了。
+Payload自己跑去看文章吧，因为都是用工具生成的Payload。
 
 
 

@@ -54,6 +54,9 @@
 - Valve型内存马
 - 学习JSPFinder源码,并改进为JSPHunter
 - 实现java版本的mysql蜜罐:Groundhog
+- 基础介绍和基础语法 
+- 示例QL文件
+- 开源项目/基于jvm-sandbox的简易rasp
 - spring基础
 
 

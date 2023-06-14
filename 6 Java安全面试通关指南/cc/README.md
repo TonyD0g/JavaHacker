@@ -1,6 +1,6 @@
 ## CC
 
-### 谈下CC链中三个重要的`Transformer`（★★★）[+]
+### 谈下CC链中三个重要的`Transformer`（★★★）[+] 
 
 `ConstantTransformer`类的`transform`方法直接返回传入的类对象
 

