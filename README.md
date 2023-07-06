@@ -43,6 +43,8 @@
 -  本地命令执行和反弹shell
 -  JNDI
 -  JVM基础（JVM结构，垃圾回收机制/器，字节码结构，执行引擎等）
+-  [EL表达式基础](https://drun1baby.top/2022/09/23/Java-%E4%B9%8B-EL-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B3%A8%E5%85%A5/)
+-  [SpEL表达式基础](https://drun1baby.top/2022/09/23/Java-%E4%B9%8B-SpEL-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B3%A8%E5%85%A5/#Java-%E4%B9%8B-SpEL-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B3%A8%E5%85%A5)
 
 **3.Java反序列化**
 

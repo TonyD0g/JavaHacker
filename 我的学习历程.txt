@@ -57,6 +57,8 @@
 - 基础介绍和基础语法 
 - 示例QL文件
 - 开源项目/基于jvm-sandbox的简易rasp
+- EL表达式基础
+- SpEL表达式基础
 - spring基础
 
 
