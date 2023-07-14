@@ -62,16 +62,21 @@
   - cc7
 - JDK7u21
 - 利用zkar初识序列化结构
+- 奇技淫巧
+  - 终极Java反序列化Payload缩小技术
+  - Java反序列化回显的多种姿势
 
 **4.开源项目学习**
 
 - JSPHorse-master	和 [JSP免杀学习](https://tttang.com/archive/1315/#toc_0x00)
 - 冰蝎自定义协议仿写
 - JSPKiller
-- Gadgetinspector
+- Gadgetinspector (还没看代码,只看了文章)
 - 学习JSPFinder源码,并改进为JSPHunter
 - 实现java版本的mysql蜜罐:Groundhog
 - 基于jvm-sandbox的简易rasp
+- 二开CS基础(beacon部分不会,因为需要逆向,C,shellcode的技术)
+- ShortPayload (终极 Java 反序列化 Payload 缩小技术)
 
 **5.Fastjson**
 

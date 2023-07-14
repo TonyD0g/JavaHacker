@@ -25,3 +25,23 @@
   D:\Soft1\jdk\jdk17\bin\java.exe -classpath cat_client.jar CrackSleeve
 
   D:\Soft1\jdk\jdk17\bin\java.exe -classpath CS_Client.jar CrackSleeve.java encode
+
+## 自定义header头
+
+```md
+
+powershell:
+复杂版本(能添加cookie):
+$sess = New-Object Microsoft.PowerShell.Commands.WebRequestSession;
+$cookie = New-Object System.Net.Cookie;
+$cookie.Name = "baidu";
+$cookie.Value = "123456789";
+$cookie.Domain = (New-Object Uri($url)).Host;
+$sess.Cookies.Add($cookie);
+irm -Uri "http://127.0.0.1:80/sb" -WebSession $sess
+
+
+简洁版本(但不能添加cookie,有点鸡肋):
+irm -Uri "http://127.0.0.1:80/sb" -Headers @{Authorization = "Bearer token"}
+```
+
