@@ -124,11 +124,17 @@ TemplatesImpl.getOutputProperties()
 
 ### 了解BCEL ClassLoader吗（★）[+]
 
+（镜像问题：
+
+**bcel利用条件**
+
+）
+
 BCEL的全名应该是Apache Commons BCEL，属于Apache Commons项目下的一个子项目
 
 该类常常用于各种漏洞利用POC的构造，可以加载特殊的字符串所表示的字节码
 
-但是在Java 8u251之后该类从JDK中移除
+但是在Java 8u251之后该类从JDK中移除（即对Java版本有限制）
 
 
 

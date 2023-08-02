@@ -2,11 +2,23 @@
 
 ### 使用`JSON.parse()`和`JSON.parseObject()`的不同（★）[+]
 
+(镜像问题:
+
+**fastjson怎么将json转换成对象的，简单描述一下**
+
+)
+
 前者会在JSON字符串中解析字符串获取`@type`指定的类，后者则会直接使用参数中的`class`，并且对应类中(符合规范的)所有`getter`和`setter`都会被调用
 
 
 
 ### 什么情况下反序列化过程会反射调用`getter`（★）[+]
+
+(镜像问题:
+
+**fastjson为什么会造成反序列化？**
+
+)
 
 符合`getter`规范的情况且不存在`setter`
 
@@ -77,7 +89,9 @@
 
 ### Fastjson应该如何探测（★★）[+]
 
-使用`dnslog`做检测是最常见的方式，利用`java.net.Inet[4][6]Address`或`java.net.InetSocketAddress`或`java.net.URL`类，之所以使用这三个因为不在黑名单中，可以直接检测
+使用`dnslog`做检测是最常见的方式，利用`java.net.Inet[4][6]Address`或`java.net.InetSocketAddress`或`java.net.URL`类，之所以使用这三个因为不在黑名单中，可以直接检测。
+
+[对应文章](https://gv7.me/articles/2020/several-ways-to-detect-fastjson-through-dnslog/)
 
 除了这种方式，还可以自行实现虚假的`JNDI Server`作为反连平台，用`JdbcRowSetImpl`这样的`Payload`来触发
 

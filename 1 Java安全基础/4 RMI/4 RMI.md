@@ -7,9 +7,9 @@
  [JAVA安全基础（四）-- RMI机制](https://xz.aliyun.com/t/9261)
 
 ### RMI有三个参与方:
+RMI Client
 RMI Registry
 RMI Server
-RMI Client
 
 ### RMI 通讯过程
 
