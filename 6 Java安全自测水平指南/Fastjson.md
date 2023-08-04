@@ -89,9 +89,7 @@
 
 ### Fastjson应该如何探测（★★）[+]
 
-使用`dnslog`做检测是最常见的方式，利用`java.net.Inet[4][6]Address`或`java.net.InetSocketAddress`或`java.net.URL`类，之所以使用这三个因为不在黑名单中，可以直接检测。
-
-[对应文章](https://gv7.me/articles/2020/several-ways-to-detect-fastjson-through-dnslog/)
+使用`dnslog`做检测是最常见的方式，利用`java.net.Inet[4][6]Address`或`java.net.InetSocketAddress`或`java.net.URL`类，之所以使用这三个因为不在黑名单中，可以直接检测。[对应文章](https://gv7.me/articles/2020/several-ways-to-detect-fastjson-through-dnslog/)
 
 除了这种方式，还可以自行实现虚假的`JNDI Server`作为反连平台，用`JdbcRowSetImpl`这样的`Payload`来触发
 

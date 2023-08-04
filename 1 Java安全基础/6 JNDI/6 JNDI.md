@@ -81,6 +81,46 @@ registry.lookup("remoteObj");
 
 ---
 
+## 何为JNDI 访问目录
+
+JNDI访问目录的基本过程如下：
+
+1. 创建一个JNDI初始上下文（InitialContext）对象，该对象用于连接到目标命名和目录服务。这通常涉及指定一组属性，以描述要连接的服务。
+2. 使用上下文对象的lookup()方法，通过给定的名称查找目标对象。如果找到了对象，它将作为结果返回。
+3. 可能还可以使用bind()方法将新的对象绑定到指定的名称，或者使用rebind()方法重新绑定已有的对象。
+4. 使用unbind()方法可以解除对象与名称的绑定。
+5. 最后，使用close()方法关闭上下文对象释放资源。
+
+下面是一个简单的示例代码，演示了如何使用JNDI访问目录：
+
+```java
+javaCopy codeimport javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+public class JNDIDemo {
+    public static void main(String[] args) {
+        try {
+            // 创建JNDI初始上下文对象
+            Context context = new InitialContext();
+
+            // 查找名为"myObject"的对象
+            Object myObject = context.lookup("myObject");
+
+            // 根据需要使用对象
+            System.out.println("Found object: " + myObject);
+
+            // 关闭上下文
+            context.close();
+        } catch (NamingException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+---
+
 ## JNDI 注入 
 
 **它与所调用服务（LDAP,DNS,CORBA,RMI）无关,都存在这个漏洞**

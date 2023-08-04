@@ -130,6 +130,8 @@ TemplatesImpl.getOutputProperties()
 
 ）
 
+BCEL用于操作字节码.
+
 BCEL的全名应该是Apache Commons BCEL，属于Apache Commons项目下的一个子项目
 
 该类常常用于各种漏洞利用POC的构造，可以加载特殊的字符串所表示的字节码
@@ -196,13 +198,13 @@ LinkedHashSet.readObject()
 
 
 
-### 了解缩小反序列化Payload的手段吗（★★★）
+### 了解缩小反序列化Payload的手段吗（★★★）[+]
 
 首先最容易的方案是使用Javassist生成字节码，这种情况下生成的字节码较小。进一步可以用ASM删除所有的LineNumber指令，可以更小一步。最终手段可以分块发送多个Payload最后合并再用URLClassLoader加载
 
 
 
-### 谈谈实战中命令执行有哪些回显的办法（★★★★）
+### 谈谈实战中命令执行有哪些回显的办法（★★★★）[+]
 
 首先想到的办法是`dnslog`等技术进行外带，但必须出网，有限制
 
