@@ -43,7 +43,7 @@
 
 ### Shiro反序列化Gadget选择有什么坑吗（★★★）[+]
 
-默认不包含CC链包含CB1链。用不同版本的CB1会导致出错，因为`serialVersionUID`不一致
+默认不包含CC链而去包含CB1链。用不同版本的CB1会导致出错，因为`serialVersionUID`不一致
 
 另一个CB1的坑是`Comparator`来自于CC，需要使用如下的才可以在没有CC依赖情况下成功RCE
 

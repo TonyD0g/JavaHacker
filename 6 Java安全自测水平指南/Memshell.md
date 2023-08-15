@@ -83,7 +83,7 @@ Java Agent内存马：这种方式不仅限于`Tomcat`或`Spring`
 
 
 
-### 查到Java Agent内存马那么应该如何杀（★★）
+### 查到Java Agent内存马那么应该如何杀（★★）[+]
 
 这个比较简单，用`Agent`把查到的类对应的方法改成原始的字节码即可
 
@@ -104,3 +104,33 @@ Java Agent内存马：这种方式不仅限于`Tomcat`或`Spring`
 ### 是否了解Spring Cloud Gateway如何注入内存马（★★★★）
 
 参考`c0ny1`师傅的文章，由于`Spring Cloud Gateway`并不基于`Tomcat`而是基于`Netty`框架，需要构造一个`handler`用作内存马。另外的思路是构造上层的内存马，也就是基于`Spring`的内存马，向`RequestMappingHandlerMapping`中注入新的映射。具体代码使用到了`Sping`的一些工具类，在`SPEL`中反射调用了`defineClass`以达到执行代码的效果
+
+
+
+### 谈谈Executor内存马（★★★）[+]
+
+**基础原理：**
+
+Tomcat中的service主要由Connector和Container组成，filter/listener/servlet型内存马实现过程都在Container中,那Connector中有没有内存马？答案是存在的，即Executor内存马。Connector主要分为EndPoint和Processor和Adapter。而Executor组件就存在于EndPoint中。
+
+关键在于Executor组件有个executor.execute()方法，所以我们只需要重写executor.execute()方法即可实现恶意类，然后再通过AbstractEndpoint中的setExecutor⽅法将原本的executor置换为我们的恶意类,内存马就完成了.
+
+**自定义传参：（比如想执行whoami）**
+
+标准的ServletRequest需要经过Processor的封装后才可获得，如果我们想要把命令放在header中传入，该如何实现？
+
+可以通过NioEndpoint中的nioChannels的appReadBufHandler，很明显其中的Buffer存放着我们所需要的request（估计还有别的类可以使用，待探索）
+
+**实现回显：**
+
+1.AbstractProcessor初始化了request,response
+
+2.Response是会封装在Request对象中的
+
+3.在Container中的逻辑处理完之后，Http11Processor会继续对我们的response进⾏封装
+
+4.所以我们只需将命令执⾏的结果提前放⼊Tomcat的response中即可
+
+**Executor内存马图示:**
+
+![](Pic/Executor内存马图示.png)

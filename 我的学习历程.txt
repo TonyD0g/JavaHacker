@@ -61,6 +61,7 @@
 - SpEL表达式基础
 - 开源项目/二开CS基础(beacon部分不会,因为需要逆向,C,shellcode的技术)
 - 开源项目/ShortPayload + Java反序列化基础/终极Java反序列化Payload缩小技术.pdf
+- 反序列化基础/Weblogic CVE-2015-
 - spring基础
 
 
